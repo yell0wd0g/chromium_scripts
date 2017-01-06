@@ -1,7 +1,7 @@
 #!/bin/sh
 
 CMD="./out/gn/chrome \
--vmodule='*ImageCapture*=2,*image_capture*=1' \
+-vmodule='*ImageCapture*=2,*image_capture*=1,*v4l2*=2*' \
 --use-fake-ui-for-media-stream \
 --enable-blink-features=ImageCapture \
 https://rawgit.com/Miguelao/demos/master/imagecapture.html"
