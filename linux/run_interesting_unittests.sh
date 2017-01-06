@@ -2,32 +2,17 @@
 
 CMD1="./out/gn/content_unittests \
 --gtest_filter='\
-VideoCaptureBufferPoolTest.*:\
-VideoCaptureControllerTest.*:\
-VideoCaptureHostTest.*:\
-VideoCaptureManagerTest.*:\
+VideoCapture*:\
 DesktopCaptureDeviceTest.*:\
-WebContentsVideoCaptureDeviceTest.*:\
+*VideoCapture*:\
 ScreenCaptureDeviceTest.*:
-VideoCaptureImplTest.*:\
-VideoCaptureMessageFilterTest.*:\
-MediaStreamDispatcherHostTest.*:\
 MediaInternalsVideoCaptureDeviceTest.*:\
-MediaStreamDispatcherTest.*:\
-MediaStreamImplTest.*:\
-MediaStreamManagerTest.*:\
-MediaStreamUIProxyTest.*:\
-MediaStreamRemoteVideoSourceTest.*:\
-MediaStreamVideoSourceTest.*\
-MediaStreamVideoCapturerSourceTest.*' \
+MediaStream*' \
 -enable-logging=stderr \
 -vmodule='*video*=3,*media*=3'"
 
 
-CMD2="./out/gn/media_unittests \
---gtest_filter='*FakeVideoCaptureDeviceTest.*' \
---enable-logging=stderr \
--vmodule='*video*=1'"
+CMD2="./out/gn/capture_unittests"
 
 #CMD3="./out/gn/browser_tests \
 #--gtest_filter='TabCaptureApiPixelTest.*' \
@@ -37,12 +22,12 @@ CMD2="./out/gn/media_unittests \
 echo "----------------"
 echo $CMD1
 echo "----------------"
-eval $CMD1
+eval $CMD1 | ccze -A
 
 echo "----------------"
 echo $CMD2
 echo "----------------"
-eval $CMD2
+eval $CMD2 | ccze -A
 
 ##echo "----------------"
 ##echo $CMD3
