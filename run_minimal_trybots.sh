@@ -8,7 +8,8 @@ git cl try -m master.tryserver.chromium.linux   -b cast_shell_linux && \
 git cl try -m master.tryserver.chromium.android -b cast_shell_android -b android_clang_dbg_recipe && \
 git cl try -m master.tryserver.chromium.linux  -b linux_chromium_chromeos_rel_ng -b linux_chromium_chromeos_compile_rel_ng && \
 git cl try -m master.tryserver.chromium.linux  -b linux_chromium_asan_rel_ng && \
-git cl try -m master.tryserver.chromium.mac    -b mac_chromium_asan_rel_ng"
+git cl try -m master.tryserver.chromium.mac    -b mac_chromium_asan_rel_ng && \
+git cl try -m master.tryserver.chromium.mac    -b mac_chromium_10.10_rel_ng"
 
 
 echo $CMD && eval $CMD
