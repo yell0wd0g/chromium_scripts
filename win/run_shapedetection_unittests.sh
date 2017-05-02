@@ -2,8 +2,8 @@
 
 CMD='./out/gn/service_unittests.exe \
 --gtest_filter=*Detec* \
--vmodule=*shape_det*=2 
---enable-logging'
+-vmodule=*detection*=2 
+--enable-logging --v=1'
 
 
 echo $CMD && eval $CMD
